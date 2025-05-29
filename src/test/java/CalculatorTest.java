@@ -23,4 +23,15 @@ class CalculatorTest {
         });
         assertEquals("The value was too big", ex.getMessage());
     }
+
+    @Test
+    void testsubtractSuccess() {
+        assertEquals(5, cal.subtract(10,5));
+    }
+
+    @Test
+    void testsubtractFailure() {
+        Exception ex = assertThrows(IllegalStateException.class, () ->{cal.subtract(5,10);});
+        assertEquals("Negative results are not allowed", ex.getMessage());
+    }
 }
