@@ -13,7 +13,7 @@ class CalculatorTest {
 
     @Test
     void testaddSuccess() {
-        assertEquals(8, cal.add(4, 4));
+        assertEquals(20, cal.add(4, 16));
     }
 
     @Test
@@ -26,12 +26,12 @@ class CalculatorTest {
 
     @Test
     void testsubtractSuccess() {
-        assertEquals(5, cal.subtract(10,5));
+        assertEquals(7, cal.subtract(12,5));
     }
 
     @Test
     void testsubtractFailure() {
-        Exception ex = assertThrows(IllegalStateException.class, () ->{cal.subtract(5,10);});
+        Exception ex = assertThrows(IllegalStateException.class, () ->{cal.subtract(8,10);});
         assertEquals("Negative results are not allowed", ex.getMessage());
     }
 
@@ -42,7 +42,7 @@ class CalculatorTest {
 
     @Test
     void testdivideFailure() {
-        Exception ex = assertThrows(ArithmeticException.class, () -> {cal.divide(10,0);});
+        Exception ex = assertThrows(ArithmeticException.class, () -> {cal.divide(100,0);});
         assertEquals("Cannot divide by zero", ex.getMessage());
     }
 
